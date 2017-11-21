@@ -1,0 +1,5 @@
+{
+	"deviceType":"{{myActuatorType}}",
+	"deviceId":"{{myActuatorId}}",
+	"event":{{myActuatorData}}
+}

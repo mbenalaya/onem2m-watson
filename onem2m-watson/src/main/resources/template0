@@ -1,0 +1,5 @@
+{
+	"deviceType":"{{mySensorType}}",
+	"deviceId":"{{mySensorId}}",
+	"event":{{mySensorData}}
+}
