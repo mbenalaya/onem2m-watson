@@ -4,11 +4,14 @@
 	<groupId>org.eclipse.om2m</groupId>
 	<artifactId>onem2m-watson</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
 	<packaging>jar</packaging>
-	
 	<name>onem2m-watson</name>
-	
+
+	<properties>
+    	<maven.compiler.source>1.8</maven.compiler.source>
+    	<maven.compiler.target>1.8</maven.compiler.target>
+ 	</properties>
+ 	
 	<repositories>
 	    <repository>
 	        <id>Eclipse Paho Repo</id>
@@ -59,6 +62,7 @@
 		  <artifactId>compiler</artifactId>
 		  <version>0.9.5</version>
 		</dependency>
+
 	</dependencies>
 
 </project>
