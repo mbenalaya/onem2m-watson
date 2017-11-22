@@ -11,13 +11,18 @@ package core;
 import http.HttpResponse;
 import http.RestHttpClient;
 import http.RestHttpServer;
+
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.Properties;
+
 import mapper.Mapper;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import com.github.mustachejava.DefaultMustacheFactory;
 import com.github.mustachejava.Mustache;
 import com.github.mustachejava.MustacheFactory;
@@ -35,7 +40,7 @@ public class Core {
 		
 		Properties props = new Properties();
 		try {
-			props.load(Thread.currentThread().getContextClassLoader().getResourceAsStream(PROPERTIES_FILE_NAME));
+			props.load(new FileInputStream(PROPERTIES_FILE_NAME));
 		} catch (IOException e1) {
 			System.err.println("Not able to read the properties file, exiting..");
 			System.exit(1);
