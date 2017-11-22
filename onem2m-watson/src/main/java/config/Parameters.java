@@ -70,7 +70,7 @@ public class Parameters {
 		
 	    String value;
 	    for(int i = 0; (value = props.getProperty("template." + i)) != null; i++) {
-	    	templates.add(value);
+	    	templates.add("templates/"+value);
 	    }
 	}
 	

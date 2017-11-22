@@ -33,7 +33,7 @@ import com.ibm.iotf.client.api.APIClient.ContentType;
 import config.Parameters;
 
 public class Core {
-	private final static String PROPERTIES_FILE_NAME = "config.ini";
+	private final static String PROPERTIES_FILE_NAME = "config/config.ini";
 	public static APIClient watsonClient = null;
 	
 	public static void main(String[] args) {
