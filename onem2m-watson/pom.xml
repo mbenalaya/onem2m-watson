@@ -58,13 +58,14 @@
 						</goals>
 						<configuration>
 							<tasks>
+								<copy file="${basedir}/script" tofile="${basedir}/target/start.sh"/>
+								<copy file="${basedir}/script" tofile="${basedir}/target/start.bat"/>
 								<copy todir="${basedir}/target/config">
 									<fileset dir="${basedir}/config" />
 								</copy>
 								<copy todir="${basedir}/target/templates">
 									<fileset dir="${basedir}/templates"/>
 								</copy>
-								<delete dir="${basedir}/target/classes"/>
 								<delete dir="${basedir}/target/surefire"/>
 								<delete dir="${basedir}/target/maven-archiver"/>
 								<delete file="${basedir}/target/onem2m-watson-0.0.1.jar"/>
