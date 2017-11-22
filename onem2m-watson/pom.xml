@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.eclipse.om2m</groupId>
 	<artifactId>onem2m-watson</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>jar</packaging>
 	<name>onem2m-watson</name>
 
@@ -85,6 +85,9 @@
 								<copy todir="${basedir}/target/templates">
 									<fileset dir="${basedir}/templates"/>
 								</copy>
+								<delete dir="${basedir}/target/classes"/>
+								<delete dir="${basedir}/target/surefire"/>
+								<delete dir="${basedir}/target/maven-archiver"/>
 							</tasks>
 						</configuration>
 					</execution>
