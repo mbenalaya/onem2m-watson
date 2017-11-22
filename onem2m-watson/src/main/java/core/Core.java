@@ -127,7 +127,7 @@ public class Core {
 
 							}
 						} catch (JSONException e) {
-							e.printStackTrace();
+							System.out.println(Parameters.templates.get(i) +" Not matching");	
 						} catch (IOException e) {
 							e.printStackTrace();
 						}
