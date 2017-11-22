@@ -78,9 +78,13 @@
 						</goals>
 						<configuration>
 							<tasks>
-								<echo>Copying scripts into in product</echo>
-								<copy file="${basedir}/config.ini" tofile="${basedir}/target/config.ini"/>
-								
+								<echo>Copying files into in target</echo>
+								<copy todir="${basedir}/target/config">
+									<fileset dir="${basedir}/config" />
+								</copy>
+								<copy todir="${basedir}/target/templates">
+									<fileset dir="${basedir}/templates"/>
+								</copy>
 							</tasks>
 						</configuration>
 					</execution>
