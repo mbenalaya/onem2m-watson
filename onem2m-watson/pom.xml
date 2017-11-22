@@ -11,14 +11,6 @@
     	<maven.compiler.source>1.8</maven.compiler.source>
     	<maven.compiler.target>1.8</maven.compiler.target>
  	</properties>
- 	
-	<repositories>
-	    <repository>
-	        <id>Eclipse Paho Repo</id>
-	        <url>https://repo.eclipse.org/content/repositories/paho-releases/
-	        </url>
-	    </repository>
-	</repositories>
 	
 	<dependencies>
 		<dependency>
@@ -28,21 +20,9 @@
 		</dependency>
 		
 		<dependency>
-		  <groupId>com.github.zgmnkv</groupId>
-		  <artifactId>zwave4j</artifactId>
-		  <version>0.3</version>
-		</dependency>
-		
-		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
 			<version>4.5.1</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.glassfish</groupId>
-			<artifactId>javax.json</artifactId>
-			<version>1.0.4</version>
 		</dependency>
 		
 		<dependency>
@@ -62,8 +42,8 @@
 		  <artifactId>compiler</artifactId>
 		  <version>0.9.5</version>
 		</dependency>
-
 	</dependencies>
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -78,7 +58,6 @@
 						</goals>
 						<configuration>
 							<tasks>
-								<echo>Copying files into in target</echo>
 								<copy todir="${basedir}/target/config">
 									<fileset dir="${basedir}/config" />
 								</copy>
@@ -88,9 +67,39 @@
 								<delete dir="${basedir}/target/classes"/>
 								<delete dir="${basedir}/target/surefire"/>
 								<delete dir="${basedir}/target/maven-archiver"/>
+								<delete file="${basedir}/target/onem2m-watson-0.0.1.jar"/>
+								<delete dir="${basedir}/target/generated-sources"/>
+								<delete dir="${basedir}/target/archive-tmp"/>
 							</tasks>
 						</configuration>
 					</execution>
+				</executions>
+			</plugin> 
+			
+
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.4.1</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+					  <manifest>
+						<mainClass>core.Core</mainClass>
+					  </manifest>
+					</archive>
+				</configuration>
+				<executions>
+				  <execution>
+					<id>make-assembly</id>
+					<phase>package</phase>
+					<goals>
+						<goal>single</goal>
+					</goals>
+				  </execution>
 				</executions>
 			</plugin>
 		</plugins>
