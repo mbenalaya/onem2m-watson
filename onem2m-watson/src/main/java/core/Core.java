@@ -123,8 +123,7 @@ public class Core {
 								}
 								break;
 							}else{
-								System.out.println(Parameters.templates.get(i) +" Not matching");						
-
+								System.out.println(Parameters.templates.get(i) +" Not matching");
 							}
 						} catch (JSONException e) {
 							System.out.println(Parameters.templates.get(i) +" Not matching");	
@@ -137,4 +136,3 @@ public class Core {
 			System.out.println("***************************************************************");
 	}
 }
-
