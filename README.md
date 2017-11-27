@@ -91,5 +91,6 @@ Execute the following script to start the interworking
 $ ./start.sh
 ```
 
-
+## License
+Open sourced under the Eclipse Public License 1.0.
 
