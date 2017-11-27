@@ -2,6 +2,12 @@
 oneM2M Watson IoT Platform interworking
 
 ## Quick Start Guide
+
+### Requirements
+* Apache Maven 3 for to build the project
+* JAVA 1.7 (at least) to run the project
+
+
 ### Clone and build from source
 Clone the project and go to the folder onem2m-watson/onem2m-watson
 ```sh
