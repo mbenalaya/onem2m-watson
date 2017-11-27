@@ -56,7 +56,7 @@ public class RestHttpServer {
             System.out.println(body);
             
 	            JSONObject sgn = new JSONObject(body);
-	            if(sgn.getJSONObject("m2m:sgn").has("vrq")){
+	            if(sgn.getJSONObject("m2m:sgn").has("m2m:vrq") || sgn.getJSONObject("m2m:sgn").has("vrq") ){
 			        System.out.println("Confirm subscription");
 	            }else {
 					String sur = sgn.getJSONObject("m2m:sgn").getString("sur");
