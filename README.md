@@ -1,7 +1,7 @@
 # oneM2M Watson IoT interworking
 oneM2M Watson IoT Platform interworking
 
-## Get started
+## Quick Start Guide
 ### Clone and build from source
 Clone the project and go to the folder onem2m-watson/onem2m-watson
 ```sh
