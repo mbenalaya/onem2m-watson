@@ -65,7 +65,7 @@ The templates should be added to the folder "Templates".
 The following templates are provided as examples.
 
 #### template0 file
-```sh
+```json
 {
 	"deviceType":"{{mySensorType}}",
 	"deviceId":"{{mySensorId}}",
