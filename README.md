@@ -67,16 +67,16 @@ The following templates are provided as examples.
 #### template0 file
 ```sh
 {
-	"deviceType":"{{mySensorType}}",
-	"deviceId":"{{mySensorId}}",
+	"deviceType":{{mySensorType}},
+	"deviceId":{{mySensorId}},
 	"event":{{mySensorData}}
 }
 ```
 #### template1 file
 ```sh
 {
-	"deviceType":"{{myActuatorType}}",
-	"deviceId":"{{myActuatorId}}",
+	"deviceType":{{myActuatorType}},
+	"deviceId":{{myActuatorId}},
 	"event":{{myActuatorData}}
 }
 ```
