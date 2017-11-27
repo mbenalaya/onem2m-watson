@@ -55,14 +55,21 @@ public class RestHttpServer {
 
             System.out.println(body);
             
-	            JSONObject sgn = new JSONObject(body);
-	            if(sgn.getJSONObject("m2m:sgn").has("m2m:vrq") || sgn.getJSONObject("m2m:sgn").has("vrq") ){
+	            JSONObject jsonbody = new JSONObject(body);
+	            if(jsonbody.getJSONObject("m2m:sgn").has("m2m:vrq") || jsonbody.getJSONObject("m2m:sgn").has("vrq") ){
 			        System.out.println("Confirm subscription");
 	            }else {
-					String sur = sgn.getJSONObject("m2m:sgn").getString("sur");
-			        JSONObject rep = sgn.getJSONObject("m2m:sgn").getJSONObject("nev").getJSONObject("rep");
-	            	System.out.println("ty: "+rep.getInt("ty"));
-			        if(rep.getInt("ty")==4){
+			        JSONObject sgn = jsonbody.getJSONObject("m2m:sgn");
+			        JSONObject rep = null;
+			        if(sgn.has("nev")){
+			        	rep = sgn.getJSONObject("nev").getJSONObject("rep");
+			        }else if (sgn.has("m2m:nev")){
+				        rep = sgn.getJSONObject("m2m:nev").getJSONObject("m2m:rep");
+			        }
+			        System.out.println("***************** "+rep);
+
+	            	System.out.println("ty: "+rep);
+			        if(!rep.isNull("m2m:cin")){
 			        	String content = rep.getString("con");
 						MustacheFactory mf = new DefaultMustacheFactory();
 						for(int i=0;i<Parameters.templates.size();i++){
@@ -109,7 +116,7 @@ public class RestHttpServer {
 								e.printStackTrace();
 							}
 						}
-			        }else if(rep.getInt("ty")==2){
+			        }else if(!rep.isNull("m2m:ae")){
 						System.out.println("Wait 10s before AE containers discovery");
 
 			        	try {
