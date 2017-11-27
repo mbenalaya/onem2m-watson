@@ -4,7 +4,7 @@ oneM2M Watson IoT Platform interworking
 ## Quick Start Guide
 
 ### Requirements
-* Apache Maven 3 for to build the project
+* Apache Maven 3 to build the project
 * JAVA 1.7 (at least) to run the project
 
 
