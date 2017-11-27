@@ -66,7 +66,6 @@ public class RestHttpServer {
 			        }else if (sgn.has("m2m:nev")){
 				        rep = sgn.getJSONObject("m2m:nev").getJSONObject("m2m:rep");
 			        }
-			        System.out.println("***************** "+rep);
 
 	            	System.out.println("ty: "+rep);
 			        if(rep.has("m2m:cin")){
