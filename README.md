@@ -99,19 +99,54 @@ Download the Eclipe OM2M project using the following link: https://wiki.eclipse.
 
 Unzip Eclipse OM2M zip file.
 
-Enter the IN-CSE directory and run the CSE
+Enter the "in-cse" directory and run the CSE
 ```sh
 $ ./start.sh
 ```
 Once OM2M is running you can view its resource tree by going to the following page in a local web-browser and using the username "admin" and password "admin": http://127.0.0.1:8080/webpage
 
-### Connect oneM2M devices
-TODO
+### Start the oneM2M devices simulator
+A oneM2M device simulator is available on the folder "simulation".
+
+#### Configure the simulator
+Got to the folder "simulation".
+
+You can configure the simulator using the file config.ini
+
+##### Target CSE params
+```sh
+adminAeId = admin:admin
+cseProtocol=http
+cseIp=127.0.0.1
+csePort = 8080
+cseId = in-cse
+cseName = in-name
+reset=false
+```
+##### Target CSE params
+```sh
+aeDeviceIdPrefix = CAE-device
+aeDeviceNamePrefix = ae_device
+numberOfDevice = 5
+deviceSleepPeriodInMs = 1000
+containerMaxNumberOfInstances = 1000
+```
+##### Sensor params
+```sh
+cntSensorPrefix = sensor
+```
+##### Actuator params
+```sh
+cntActuatorPrefix = actuator
+aeDeviceProtocol= http
+aeDeviceIp = 127.0.0.1
+aeDevicePort = 1401
+```
 
 ### Start the oneM2M Watson IoT interworking
 See the "Getting Started" section to run the interworking 
 
-### Check your data on Watson IoT Platform
+### Visualize your data on Watson IoT Platform
 TODO
 
 ## License
