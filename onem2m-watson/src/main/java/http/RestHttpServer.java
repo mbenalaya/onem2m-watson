@@ -69,7 +69,7 @@ public class RestHttpServer {
 			        System.out.println("***************** "+rep);
 
 	            	System.out.println("ty: "+rep);
-			        if(!rep.isNull("m2m:cin")){
+			        if(rep.has("m2m:cin")){
 			        	String content = rep.getString("con");
 						MustacheFactory mf = new DefaultMustacheFactory();
 						for(int i=0;i<Parameters.templates.size();i++){
@@ -116,11 +116,11 @@ public class RestHttpServer {
 								e.printStackTrace();
 							}
 						}
-			        }else if(!rep.isNull("m2m:ae")){
-						System.out.println("Wait 10s before AE containers discovery");
+			        }else if(rep.has("m2m:ae")){
+						System.out.println("Wait 5s before AE containers discovery");
 
 			        	try {
-							Thread.sleep(10000);
+							Thread.sleep(5000);
 						} catch (InterruptedException e) {
 							e.printStackTrace();
 						}
