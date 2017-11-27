@@ -1,5 +1,5 @@
 {
-	"deviceType":"{{myActuatorType}}",
-	"deviceId":"{{myActuatorId}}",
+	"deviceType":{{myActuatorType}},
+	"deviceId":{{myActuatorId}},
 	"event":{{myActuatorData}}
 }
