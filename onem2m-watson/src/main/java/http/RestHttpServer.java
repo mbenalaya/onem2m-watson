@@ -70,7 +70,7 @@ public class RestHttpServer {
 
 	            	System.out.println("ty: "+rep);
 			        if(rep.has("m2m:cin")){
-			        	String content = rep.getString("con");
+			        	String content = rep.getJSONObject("m2m:cin").getString("con");
 						MustacheFactory mf = new DefaultMustacheFactory();
 						for(int i=0;i<Parameters.templates.size();i++){
 							System.out.println("Trying to match with template: "+Parameters.templates.get(i));						
@@ -125,7 +125,7 @@ public class RestHttpServer {
 							e.printStackTrace();
 						}
 
-						String aeName = rep.getString("rn");
+						String aeName = rep.getJSONObject("m2m:ae").getString("rn");
 			        	Core.discoverAndMap(Parameters.cseURI+"/"+aeName);
 
 			        }
