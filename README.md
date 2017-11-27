@@ -123,7 +123,7 @@ cseId = in-cse
 cseName = in-name
 reset=false
 ```
-##### Target CSE params
+##### Device params
 ```sh
 aeDeviceIdPrefix = CAE-device
 aeDeviceNamePrefix = ae_device
@@ -144,10 +144,22 @@ aeDevicePort = 1401
 ```
 
 ### Start the oneM2M Watson IoT interworking
-See the "Getting Started" section to run the interworking 
+Follow the steps explained in the "Getting Started" section to run the interworking 
 
 ### Visualize your data on Watson IoT Platform
-TODO
+
+1. Open the Watson IoT Platform in your browser using the following url:
+https://internetofthings.ibmcloud.com
+
+2. Click on SIGN IN button in on top right of the screen and use the following demo account to login:
+	* Username: demo@sensinov.com
+	* Password : demopasswd
+
+3. After a successful login, click on the account menu on top/right of the screen to select an organization.
+
+4. Select the organization "OSS (8riy9e)" to open the corresponding Watson IoT platform dashboard.
+
+5. Click on "Devices" on the vertical menu to see the mapped devices and data.
 
 ## License
 Open sourced under the Eclipse Public License 1.0.
