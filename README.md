@@ -152,8 +152,8 @@ Follow the steps explained in the "Getting Started" section to run the interwork
 https://internetofthings.ibmcloud.com
 
 2. Click on SIGN IN button in on top right of the screen and use the following demo account to login:
-** Username: demo@sensinov.com
-** Password : demopasswd
+	* Username: demo@sensinov.com
+	* Password : demopasswd
 
 3. After a successful login, click on the account menu on top/right of the screen to select an organization.
 
