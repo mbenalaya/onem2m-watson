@@ -90,7 +90,9 @@ Execute the following script to start the interworking
 ```sh
 $ ./start.sh
 ```
-### Test with CSE
+## Demonstration
+
+### Start a oneM2M CSE
 Eclipe OM2M could be used to test the interworking.
 
 Download the Eclipe OM2M project using the following link: https://wiki.eclipse.org/OM2M/Download
@@ -101,8 +103,16 @@ Enter the IN-CSE directory and run the CSE
 ```sh
 $ ./start.sh
 ```
+Once OM2M is running you can view its resource tree by going to the following page in a local web-browser and using the username "admin" and password "admin": http://127.0.0.1:8080/webpage
 
-Once OM2M is running you can view its resource tree by going to the following page in a local web-browser and using the username ‘admin’ and password ‘admin’: http://127.0.0.1:8080/webpage
+### Connect oneM2M devices
+TODO
+
+### Start the oneM2M Watson IoT interworking
+See the "Getting Started" section to run the interworking 
+
+### Check your data on Watson IoT Platform
+TODO
 
 ## License
 Open sourced under the Eclipse Public License 1.0.
