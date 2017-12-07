@@ -43,6 +43,12 @@ public class Mapper {
 		obj.put("rn", name);
 		obj.put("nu", nu);
 		obj.put("nct", 2);
+		JSONArray array = new JSONArray();
+		array.put(3);
+		
+		JSONObject net = new JSONObject();
+		net.put("net", array);
+		obj.put("enc", net);
 		
 		JSONObject sub = new JSONObject();
 		sub.put("m2m:sub", obj);

@@ -99,8 +99,8 @@ public class Core {
 							if(!obj.get("deviceType").equals("") &&  !obj.get("deviceType").equals("") && !obj.get("deviceType").equals("")){
 								System.out.println(Parameters.templates.get(i)+" Matched");						
 
-								System.out.println("DevcieType: "+obj.get("deviceType"));
-								System.out.println("DevcieId: "+obj.get("deviceId"));
+								System.out.println("DeviceType: "+obj.get("deviceType"));
+								System.out.println("DeviceId: "+obj.get("deviceId"));
 								System.out.println("Event: "+obj.get("event"));
 
 								JSONObject deviceType = new JSONObject();
@@ -112,7 +112,7 @@ public class Core {
 								RestHttpClient.post(Parameters.watsonApiKey, Parameters.watsonToken, Parameters.watsonUri+"device/types/"+obj.get("deviceType")+"/devices", deviceId.toString(),0);
 								
 								JsonObject event = new JsonObject();
-								event.addProperty("id",  obj.get("deviceType").toString());
+								event.addProperty("id",  obj.get("deviceId").toString());
 								event.addProperty("value",  obj.get("event").toString());
 		
 								boolean code = false;
@@ -122,11 +122,12 @@ public class Core {
 									e.printStackTrace();
 								}
 								if(code == true) {
-									System.out.println("Event published successfully!");
+									System.out.println("Event published successfully to "+obj.get("deviceType"));
 								} else {
 									System.out.println("Failed to publish the event!");
 								}
 								break;
+
 							}else{
 								System.out.println(Parameters.templates.get(i) +" Not matching");
 							}

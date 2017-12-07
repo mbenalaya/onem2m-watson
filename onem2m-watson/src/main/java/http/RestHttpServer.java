@@ -90,17 +90,17 @@ public class RestHttpServer {
 							
 								
 									JsonObject event = new JsonObject();
-									event.addProperty("id",  obj.get("deviceType").toString());
+									event.addProperty("id",  obj.get("deviceId").toString());
 									event.addProperty("value",  obj.get("event").toString());
 									
 									boolean code = false;
 									try {
-										code = Core.watsonClient.publishApplicationEventforDeviceOverHTTP(obj.get("deviceId").toString(), obj.get("deviceType").toString(), "blink", event, ContentType.json);
+										code = Core.watsonClient.publishApplicationEventforDeviceOverHTTP(obj.get("deviceId").toString(), obj.get("deviceType").toString(), "event", event, ContentType.json);
 									} catch (Exception e) {
 										e.printStackTrace();
 									}
 									if(code == true) {
-										System.out.println("Event published successfully!");
+										System.out.println("Event published successfully to "+obj.get("deviceId") );
 									} else {
 										System.out.println("Failed to publish the event!");
 									}
