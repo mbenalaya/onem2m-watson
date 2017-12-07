@@ -29,6 +29,7 @@ public class RestHttpClient {
 		HttpGet httpGet= new HttpGet(uri);
 		httpGet.addHeader("Authorization",basicEncode(username,password));
 		httpGet.addHeader("X-M2M-Origin",username);
+		httpGet.addHeader("X-M2M-RI",generateRI());
 		httpGet.addHeader("Accept","application/json");
 	
 		HttpResponse httpResponse = new HttpResponse();
@@ -57,6 +58,8 @@ public class RestHttpClient {
 		httpPut.addHeader("Authorization",basicEncode(username,password));
 		httpPut.addHeader("X-M2M-Origin",username);
 		httpPut.addHeader("Content-Type","application/json");
+		httpPut.addHeader("X-M2M-RI",generateRI());
+
 		httpPut.addHeader("Accept","application/json");
 
 		HttpResponse httpResponse = new HttpResponse();
@@ -86,6 +89,7 @@ public class RestHttpClient {
 		
 		httpPost.addHeader("Authorization",basicEncode(username,password));
 		httpPost.addHeader("X-M2M-Origin",username);
+		httpPost.addHeader("X-M2M-RI",generateRI());
 		httpPost.addHeader("Accept","application/json");
 		
 		String ext = "";
@@ -122,6 +126,7 @@ public class RestHttpClient {
 		
 		httpDelete.addHeader("Authorization",basicEncode(username,password));
 		httpDelete.addHeader("X-M2M-Origin",username);
+		httpDelete.addHeader("X-M2M-RI",generateRI());
 		httpDelete.addHeader("Accept","application/json");
 
 		HttpResponse httpResponse = new HttpResponse();
@@ -151,5 +156,10 @@ public class RestHttpClient {
 			e.printStackTrace();
 		}
 		return basic;
+	}
+	
+	public static String generateRI(){
+		Integer random = (int)(Math.random()*1000)+100000;
+		return random.toString();
 	}
 }
