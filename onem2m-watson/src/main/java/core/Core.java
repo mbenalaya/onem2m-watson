@@ -63,7 +63,7 @@ public class Core {
 			String aeRep = Mapper.getAeRep(Parameters.ipeAeName, Parameters.ipeSubNu);
 			httpResponse = RestHttpClient.post(Parameters.ipeAeId,null,Parameters.cseURI, aeRep, 2);
 	    	
-			String subRep = Mapper.getSubRep(Parameters.ipeSubName,"/"+Parameters.cseId+"/"+Parameters.cseName+"/"+Parameters.ipeAeName);
+			String subRep = Mapper.getSubRep(Parameters.ipeSubName,Parameters.ipeSubNu);
 			httpResponse= RestHttpClient.post(Parameters.ipeAeId, null, Parameters.cseURI, subRep, 23);
 			discoverAndMap(Parameters.cseURI);
 	}
@@ -78,10 +78,10 @@ public class Core {
 				JSONArray urilsArray = urils.getJSONArray("m2m:uril");
 		 
 				for(int j=0;j<urilsArray.length();j++){
-					String subRep2 = Mapper.getSubRep(Parameters.ipeSubName,"/"+Parameters.cseId+"/"+Parameters.cseName+"/"+Parameters.ipeAeName);
-					httpResponse= RestHttpClient.post(Parameters.ipeAeId, null,Parameters.csePoA+"/~"+urilsArray.getString(j), subRep2, 23);
+					String subRep2 = Mapper.getSubRep(Parameters.ipeSubName,Parameters.ipeSubNu);
+					httpResponse= RestHttpClient.post(Parameters.ipeAeId, null,Parameters.csePoA+"~/"+Parameters.cseId+"/"+ urilsArray.getString(j), subRep2, 23);
 					
-					httpResponse = RestHttpClient.get(Parameters.ipeAeId, null,Parameters.csePoA+"/~"+urilsArray.getString(j)+"/la");
+					httpResponse = RestHttpClient.get(Parameters.ipeAeId, null,Parameters.csePoA+"~/"+Parameters.cseId+"/"+urilsArray.getString(j)+"/la");
 					System.out.println(httpResponse.getBody());
 		
 					JSONObject cin = new JSONObject(httpResponse.getBody());
