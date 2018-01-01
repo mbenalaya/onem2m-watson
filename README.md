@@ -34,6 +34,7 @@ Clean-Session = true
 ```
 
 #### oneM2M IPE parameters
+The IPE AE-ID (Cae-watson in this case) must have the appropriate authorizations under the CSE. 
 ```sh
 IpeAeId = Cae-watson
 IpeAeName = ae_watson
