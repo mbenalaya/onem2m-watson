@@ -1,4 +1,4 @@
-# oneM2M Watson IoT interworking
+# Interwork oneM2M with Watson IoT Platform
 
 ## Getting Started
 
